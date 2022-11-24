@@ -1,6 +1,9 @@
 package permutation
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 type TestData struct {
 	Text1    string
@@ -15,7 +18,7 @@ func TestIsPermutation(t *testing.T) {
 		isPermutation := IsPermutation(value.Text1, value.Text2)
 
 		if isPermutation != value.Expected {
-			t.Errorf("The IsPermutation should return %v for texts '%v' and '%v'. Got %v", value.Expected, value.Text1, value.Text2, isPermutation)
+			assert.Equal(t, value.Expected, isPermutation)
 		}
 	}
 }

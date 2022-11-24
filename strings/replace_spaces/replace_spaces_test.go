@@ -1,7 +1,7 @@
 package replace_spaces
 
 import (
-	"fmt"
+	"github.com/stretchr/testify/assert"
 	"strings"
 	"testing"
 )
@@ -10,8 +10,5 @@ func TestReplaceSpaces(t *testing.T) {
 	url := "Some entry to replace      "
 	result := ReplaceSpaces(url, len(strings.TrimSpace(url)))
 
-	fmt.Println(result)
-
-	result = strings.ReplaceAll(strings.TrimSpace(url), " ", "%20")
-	fmt.Println(result)
+	assert.Equal(t, "Some%20entry%20to%20replace", result)
 }

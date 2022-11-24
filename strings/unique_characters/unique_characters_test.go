@@ -1,6 +1,9 @@
 package unique_characters
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 func TestIsUnique(t *testing.T) {
 	data := getSampleData()
@@ -9,7 +12,7 @@ func TestIsUnique(t *testing.T) {
 		isUnique := IsUnique(key)
 
 		if isUnique != value {
-			t.Errorf("The IsUnique should return %v for text '%v', Got: %v, expected: %v", value, key, isUnique, value)
+			assert.Equal(t, value, isUnique)
 		}
 	}
 }

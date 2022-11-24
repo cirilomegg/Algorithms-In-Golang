@@ -1,6 +1,9 @@
 package palindrome
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 func TestIsPalindrome(t *testing.T) {
 	data := make(map[string]bool)
@@ -29,7 +32,7 @@ func TestIsPalindrome(t *testing.T) {
 		isPalindrome := IsPalindrome(key)
 
 		if isPalindrome != value {
-			t.Errorf("Wrong result for key '%v'. Got %v, expected %v", key, isPalindrome, value)
+			assert.Equal(t, value, isPalindrome)
 		}
 	}
 }
