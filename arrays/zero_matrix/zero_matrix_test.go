@@ -82,9 +82,9 @@ func TestZero(t *testing.T) {
 func evaluate(t *testing.T, matrix [][]int, expectedMatrix [][]int) {
 	matrix = ZeroMatrix(matrix)
 
-	for row := 0; row < len(matrix); row++ {
-		for col := 0; col < len(matrix[row]); col++ {
-			assert.Equal(t, expectedMatrix[row][col], matrix[row][col])
+	for i := 0; i < len(matrix); i++ {
+		for j := 0; j < len(matrix[i]); j++ {
+			assert.Equal(t, expectedMatrix[i][j], matrix[i][j])
 		}
 	}
 }
