@@ -26,3 +26,23 @@ func KthToLast(list data_structure.LinkedList, k int) *data_structure.Node {
 
 	return kth
 }
+
+func FindKthToLastRecursive(list data_structure.LinkedList, k int) *data_structure.Node {
+	kth, _ := KthToLastRecursive(list.Head, k, 0)
+	return kth
+}
+
+func KthToLastRecursive(node *data_structure.Node, k int, i int) (*data_structure.Node, int) {
+	if node == nil {
+		return nil, i
+	}
+
+	kth, counter := KthToLastRecursive(node.Next, k, i)
+	counter++
+
+	if counter == k {
+		return node, counter
+	}
+
+	return kth, counter
+}
