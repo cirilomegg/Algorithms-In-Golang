@@ -31,3 +31,40 @@ func IsPalindrome(list data_structure.LinkedList) bool {
 
 	return stack.IsEmpty()
 }
+
+func IsPalindromeRecursive(list data_structure.LinkedList) bool {
+	length := getLength(list)
+	_, result := CheckIsPalindromeRecursive(list.Head, length)
+	return result
+}
+
+func CheckIsPalindromeRecursive(node *data_structure.Node, length int) (*data_structure.Node, bool) {
+	if node == nil || length <= 0 {
+		return node, true
+	} else if length == 1 {
+		return node.Next, true
+	}
+
+	current, result := CheckIsPalindromeRecursive(node.Next, length-2)
+
+	if !result || current == nil {
+		return current, result
+	}
+
+	result = node.Data == current.Data
+	current = current.Next
+
+	return current, result
+}
+
+func getLength(list data_structure.LinkedList) int {
+	count := 0
+	node := list.Head
+
+	for node != nil {
+		count++
+		node = node.Next
+	}
+
+	return count
+}
