@@ -4,7 +4,7 @@ import "github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
 
 func IsPalindrome(list data_structure.LinkedList) bool {
 	if list.Head == nil {
-		return false
+		return true
 	}
 
 	stack := data_structure.NewStack()

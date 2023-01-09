@@ -9,7 +9,7 @@ import (
 func TestIsPalindrome(t *testing.T) {
 	list := BuildList([]int{})
 	isPalindrome := IsPalindrome(list)
-	assert.Equal(t, false, isPalindrome)
+	assert.Equal(t, true, isPalindrome)
 
 	list = BuildList([]int{1})
 	isPalindrome = IsPalindrome(list)
