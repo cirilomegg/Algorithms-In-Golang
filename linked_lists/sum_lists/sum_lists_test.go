@@ -33,6 +33,32 @@ func TestSumLists(t *testing.T) {
 	assertResult(t, result, expected)
 }
 
+func TestSumListsRecursive(t *testing.T) {
+	list1, list2, expected := buildLists(0, 0)
+	result := SumListsRecursive(list1, list2)
+	assertResult(t, result, expected)
+
+	list1, list2, expected = buildLists(1, 0)
+	result = SumLists(list1, list2)
+	assertResult(t, result, expected)
+
+	list1, list2, expected = buildLists(5, 5)
+	result = SumLists(list1, list2)
+	assertResult(t, result, expected)
+
+	list1, list2, expected = buildLists(10, 9)
+	result = SumLists(list1, list2)
+	assertResult(t, result, expected)
+
+	list1, list2, expected = buildLists(50, 50)
+	result = SumLists(list1, list2)
+	assertResult(t, result, expected)
+
+	list1, list2, expected = buildLists(612, 865)
+	result = SumLists(list1, list2)
+	assertResult(t, result, expected)
+}
+
 func assertResult(t *testing.T, result data_structure.LinkedList, expected data_structure.LinkedList) {
 	node := result.Head
 	expectedNode := expected.Head
