@@ -1,27 +1,36 @@
 package partition
 
 import (
-	"fmt"
 	"github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
-	"math/rand"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func TestPartition(t *testing.T) {
 	var list data_structure.LinkedList
-	max := 20
-	min := 0
 
-	for i := 0; i < 20; i++ {
-		list.Append(rand.Intn(max-min) + min)
+	for i := 19; i >= 0; i-- {
+		list.Append(i)
 	}
 
 	head := Partition(list, 10)
 
-	current := head
+	var expected data_structure.LinkedList
 
-	for current != nil {
-		fmt.Println(current.Data)
-		current = current.Next
+	for i := 0; i < 10; i++ {
+		expected.Append(i)
+	}
+
+	for i := 19; i >= 10; i-- {
+		expected.Append(i)
+	}
+
+	node := head
+	expectedNode := expected.Head
+
+	for node != nil {
+		assert.Equal(t, expectedNode.Data, node.Data)
+		expectedNode = expectedNode.Next
+		node = node.Next
 	}
 }
