@@ -1,13 +1,13 @@
 package partition
 
 import (
-	"github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func TestPartition(t *testing.T) {
-	var list data_structure.LinkedList
+	var list data_structures.LinkedList
 
 	for i := 19; i >= 0; i-- {
 		list.Append(i)
@@ -15,7 +15,7 @@ func TestPartition(t *testing.T) {
 
 	head := Partition(list, 10)
 
-	var expected data_structure.LinkedList
+	var expected data_structures.LinkedList
 
 	for i := 0; i < 10; i++ {
 		expected.Append(i)

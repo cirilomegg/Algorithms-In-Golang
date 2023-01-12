@@ -1,14 +1,16 @@
 package remove_duplicates
 
-import "github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+import (
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
+)
 
-func RemoveDuplicates(list data_structure.LinkedList) data_structure.LinkedList {
+func RemoveDuplicates(list data_structures.LinkedList) data_structures.LinkedList {
 	if list.Head == nil {
 		return list
 	}
 
 	found := make(map[int]bool)
-	var previous *data_structure.Node
+	var previous *data_structures.Node
 	current := list.Head
 
 	for current != nil {

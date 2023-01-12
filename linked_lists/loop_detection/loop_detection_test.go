@@ -1,13 +1,13 @@
 package loop_detection
 
 import (
-	"github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func TestDetectLoop(t *testing.T) {
-	var list data_structure.LinkedList
+	var list data_structures.LinkedList
 
 	for i := 0; i < 5; i++ {
 		list.Append(i)
@@ -18,7 +18,7 @@ func TestDetectLoop(t *testing.T) {
 
 	list.Head = nil
 	list.Tail = nil
-	var loopStart *data_structure.Node
+	var loopStart *data_structures.Node
 
 	for i := 0; i < 5; i++ {
 		list.Append(i)

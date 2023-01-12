@@ -1,7 +1,7 @@
 package remove_middle_node
 
 import (
-	"github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -26,8 +26,8 @@ func TestRemoveMiddleNode(t *testing.T) {
 	}
 }
 
-func buildList(length int) data_structure.LinkedList {
-	var list data_structure.LinkedList
+func buildList(length int) data_structures.LinkedList {
+	var list data_structures.LinkedList
 
 	for i := 1; i <= length; i++ {
 		list.Append(i)
@@ -36,7 +36,7 @@ func buildList(length int) data_structure.LinkedList {
 	return list
 }
 
-func assertRemoved(t *testing.T, list data_structure.LinkedList, removedNode int) {
+func assertRemoved(t *testing.T, list data_structures.LinkedList, removedNode int) {
 	current := list.Head
 
 	for current != nil {

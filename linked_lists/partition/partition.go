@@ -1,8 +1,10 @@
 package partition
 
-import "github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+import (
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
+)
 
-func Partition(list data_structure.LinkedList, x int) *data_structure.Node {
+func Partition(list data_structures.LinkedList, x int) *data_structures.Node {
 	node := list.Head
 	head := node
 	tail := node

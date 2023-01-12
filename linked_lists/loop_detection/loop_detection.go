@@ -1,8 +1,10 @@
 package loop_detection
 
-import "github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+import (
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
+)
 
-func DetectLoop(list data_structure.LinkedList) *data_structure.Node {
+func DetectLoop(list data_structures.LinkedList) *data_structures.Node {
 	if list.Head == nil || list.Head.Next == nil {
 		return nil
 	}

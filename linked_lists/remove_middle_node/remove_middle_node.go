@@ -1,17 +1,17 @@
 package remove_middle_node
 
 import (
-	"github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
 )
 
-func RemoveMiddleNode(list data_structure.LinkedList) data_structure.LinkedList {
+func RemoveMiddleNode(list data_structures.LinkedList) data_structures.LinkedList {
 	if list.Head == nil || list.Head.Next == nil {
 		return list
 	}
 
-	var runner *data_structure.Node
-	var middle *data_structure.Node
-	var previous *data_structure.Node
+	var runner *data_structures.Node
+	var middle *data_structures.Node
+	var previous *data_structures.Node
 
 	middle = list.Head
 	runner = list.Head

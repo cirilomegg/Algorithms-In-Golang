@@ -1,13 +1,15 @@
 package palindrome
 
-import "github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+import (
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
+)
 
-func IsPalindrome(list data_structure.LinkedList) bool {
+func IsPalindrome(list data_structures.LinkedList) bool {
 	if list.Head == nil {
 		return true
 	}
 
-	stack := data_structure.NewStack()
+	stack := data_structures.NewStack()
 	node := list.Head
 	runner := list.Head
 
@@ -32,13 +34,13 @@ func IsPalindrome(list data_structure.LinkedList) bool {
 	return stack.IsEmpty()
 }
 
-func IsPalindromeRecursive(list data_structure.LinkedList) bool {
+func IsPalindromeRecursive(list data_structures.LinkedList) bool {
 	length := getLength(list)
 	_, result := CheckIsPalindromeRecursive(list.Head, length)
 	return result
 }
 
-func CheckIsPalindromeRecursive(node *data_structure.Node, length int) (*data_structure.Node, bool) {
+func CheckIsPalindromeRecursive(node *data_structures.Node, length int) (*data_structures.Node, bool) {
 	if node == nil || length <= 0 {
 		return node, true
 	} else if length == 1 {
@@ -57,7 +59,7 @@ func CheckIsPalindromeRecursive(node *data_structure.Node, length int) (*data_st
 	return current, result
 }
 
-func getLength(list data_structure.LinkedList) int {
+func getLength(list data_structures.LinkedList) int {
 	count := 0
 	node := list.Head
 

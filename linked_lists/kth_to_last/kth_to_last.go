@@ -1,8 +1,10 @@
 package kth_to_last
 
-import "github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+import (
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
+)
 
-func KthToLast(list data_structure.LinkedList, k int) *data_structure.Node {
+func KthToLast(list data_structures.LinkedList, k int) *data_structures.Node {
 	if list.Head == nil || k <= 0 {
 		return nil
 	}
@@ -27,12 +29,12 @@ func KthToLast(list data_structure.LinkedList, k int) *data_structure.Node {
 	return kth
 }
 
-func FindKthToLastRecursive(list data_structure.LinkedList, k int) *data_structure.Node {
+func FindKthToLastRecursive(list data_structures.LinkedList, k int) *data_structures.Node {
 	kth, _ := KthToLastRecursive(list.Head, k, 0)
 	return kth
 }
 
-func KthToLastRecursive(node *data_structure.Node, k int, i int) (*data_structure.Node, int) {
+func KthToLastRecursive(node *data_structures.Node, k int, i int) (*data_structures.Node, int) {
 	if node == nil {
 		return nil, i
 	}

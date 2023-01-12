@@ -1,7 +1,7 @@
 package intersection
 
 import (
-	"github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -25,8 +25,8 @@ func TestGetIntersection(t *testing.T) {
 	assert.Nil(t, result)
 }
 
-func buildList(values []int) data_structure.LinkedList {
-	var list data_structure.LinkedList
+func buildList(values []int) data_structures.LinkedList {
+	var list data_structures.LinkedList
 
 	for _, value := range values {
 		list.Append(value)

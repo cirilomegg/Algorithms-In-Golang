@@ -1,13 +1,13 @@
 package remove_duplicates
 
 import (
-	"github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func TestRemoveDuplicates(t *testing.T) {
-	var list data_structure.LinkedList
+	var list data_structures.LinkedList
 
 	for i := 0; i < 3; i++ {
 		for j := 0; j < 10; j++ {

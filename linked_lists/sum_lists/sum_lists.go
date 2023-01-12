@@ -1,11 +1,13 @@
 package sum_lists
 
-import "github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+import (
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
+)
 
-func SumLists(list1 data_structure.LinkedList, list2 data_structure.LinkedList) data_structure.LinkedList {
+func SumLists(list1 data_structures.LinkedList, list2 data_structures.LinkedList) data_structures.LinkedList {
 	node1 := list1.Head
 	node2 := list2.Head
-	var result data_structure.LinkedList
+	var result data_structures.LinkedList
 	carry := false
 
 	for node1 != nil || node2 != nil {
@@ -40,15 +42,15 @@ func SumLists(list1 data_structure.LinkedList, list2 data_structure.LinkedList) 
 	return result
 }
 
-func SumListsRecursive(list1 data_structure.LinkedList, list2 data_structure.LinkedList) data_structure.LinkedList {
-	var result data_structure.LinkedList
+func SumListsRecursive(list1 data_structures.LinkedList, list2 data_structures.LinkedList) data_structures.LinkedList {
+	var result data_structures.LinkedList
 	result.Head = AddNext(list1.Head, list2.Head, false)
 	result.Tail = result.Head
 	return result
 }
 
-func AddNext(node1 *data_structure.Node, node2 *data_structure.Node, carry bool) *data_structure.Node {
-	var node *data_structure.Node = &data_structure.Node{}
+func AddNext(node1 *data_structures.Node, node2 *data_structures.Node, carry bool) *data_structures.Node {
+	var node *data_structures.Node = &data_structures.Node{}
 
 	if node1 == nil && node2 == nil {
 		if carry {

@@ -1,7 +1,7 @@
 package sum_lists
 
 import (
-	"github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
 	"github.com/stretchr/testify/assert"
 	"strconv"
 	"testing"
@@ -59,7 +59,7 @@ func TestSumListsRecursive(t *testing.T) {
 	assertResult(t, result, expected)
 }
 
-func assertResult(t *testing.T, result data_structure.LinkedList, expected data_structure.LinkedList) {
+func assertResult(t *testing.T, result data_structures.LinkedList, expected data_structures.LinkedList) {
 	node := result.Head
 	expectedNode := expected.Head
 
@@ -72,7 +72,7 @@ func assertResult(t *testing.T, result data_structure.LinkedList, expected data_
 	}
 }
 
-func buildLists(num1 int, num2 int) (data_structure.LinkedList, data_structure.LinkedList, data_structure.LinkedList) {
+func buildLists(num1 int, num2 int) (data_structures.LinkedList, data_structures.LinkedList, data_structures.LinkedList) {
 	total := num1 + num2
 
 	reversedNum1 := reverseString(strconv.Itoa(num1))
@@ -86,8 +86,8 @@ func buildLists(num1 int, num2 int) (data_structure.LinkedList, data_structure.L
 	return list1, list2, expectedList
 }
 
-func buildList(num string) data_structure.LinkedList {
-	var list data_structure.LinkedList
+func buildList(num string) data_structures.LinkedList {
+	var list data_structures.LinkedList
 
 	for _, i := range num {
 		value, _ := strconv.Atoi(string(i))

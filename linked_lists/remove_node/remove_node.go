@@ -1,10 +1,10 @@
 package remove_node
 
 import (
-	"github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
 )
 
-func RemoveNode(node *data_structure.Node) {
+func RemoveNode(node *data_structures.Node) {
 	if node == nil {
 		return
 	}

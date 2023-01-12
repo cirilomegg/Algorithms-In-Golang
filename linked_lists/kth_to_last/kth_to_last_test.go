@@ -1,13 +1,13 @@
 package kth_to_last
 
 import (
-	"github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func TestKthToLast(t *testing.T) {
-	var list data_structure.LinkedList
+	var list data_structures.LinkedList
 	listLength := 50
 
 	for i := 1; i <= listLength; i++ {
@@ -34,7 +34,7 @@ func TestKthToLast(t *testing.T) {
 }
 
 func TestKthToLastRecursive(t *testing.T) {
-	var list data_structure.LinkedList
+	var list data_structures.LinkedList
 	listLength := 50
 
 	for i := 1; i <= listLength; i++ {

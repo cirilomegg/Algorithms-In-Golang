@@ -1,13 +1,13 @@
 package intersection
 
 import (
-	"github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
 	"math"
 )
 
-func GetIntersection(list1 data_structure.LinkedList, list2 data_structure.LinkedList) *data_structure.Node {
-	var shorter *data_structure.Node
-	var longer *data_structure.Node
+func GetIntersection(list1 data_structures.LinkedList, list2 data_structures.LinkedList) *data_structures.Node {
+	var shorter *data_structures.Node
+	var longer *data_structures.Node
 
 	length1, tail1 := getListInfo(list1)
 	length2, tail2 := getListInfo(list2)
@@ -32,7 +32,7 @@ func GetIntersection(list1 data_structure.LinkedList, list2 data_structure.Linke
 	return longer
 }
 
-func getKthNode(node *data_structure.Node, k int) *data_structure.Node {
+func getKthNode(node *data_structures.Node, k int) *data_structures.Node {
 	if node == nil {
 		return nil
 	}
@@ -45,7 +45,7 @@ func getKthNode(node *data_structure.Node, k int) *data_structure.Node {
 	return node
 }
 
-func getListInfo(list data_structure.LinkedList) (int, *data_structure.Node) {
+func getListInfo(list data_structures.LinkedList) (int, *data_structures.Node) {
 	count := 1
 	node := list.Head
 

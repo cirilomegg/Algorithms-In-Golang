@@ -1,14 +1,14 @@
 package remove_node
 
 import (
-	"github.com/cirilomegg/algorithms-in-golang/linked_lists/data_structure"
+	"github.com/cirilomegg/algorithms-in-golang/data_structures"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func TestRemoveNode(t *testing.T) {
-	var list data_structure.LinkedList
-	var removedNode *data_structure.Node
+	var list data_structures.LinkedList
+	var removedNode *data_structures.Node
 	removedNodeIndex := 5
 
 	for i := 1; i <= 10; i++ {
